@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyan3-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyan3-{{ version }}.tar.gz
   sha256: 36b49b678820e882de7271fb8a18789d57cd1e284f0314bdecd587f02c049a19
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pyan3 = pyan.main:main
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - jinja2
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -33,6 +33,7 @@ test:
     - pyan3 --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Technologicat/pyan
