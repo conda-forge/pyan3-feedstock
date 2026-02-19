@@ -1,5 +1,5 @@
 {% set name = "pyan3" %}
-{% set version = "1.2.0" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyan3-{{ version }}.tar.gz
-  sha256: 36b49b678820e882de7271fb8a18789d57cd1e284f0314bdecd587f02c049a19
+  sha256: f4f81d2c629cbc62b7e5ad8d828a0d9bf79229b3b8598c3d39725a8540565c79
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - pyan3 = pyan.main:main
