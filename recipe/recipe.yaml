@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: pyan3
+  version: 2.0.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyan3-${{ version }}.tar.gz
+  sha256: f4f81d2c629cbc62b7e5ad8d828a0d9bf79229b3b8598c3d39725a8540565c79
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pyan3 = pyan.main:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - hatchling
+  run:
+    - jinja2
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - pyan
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - pyan3 --help
+
+about:
+  summary: Offline call graph generator for Python 3
+  license: GPL-2.0-only
+  license_file: LICENSE.md
+  homepage: https://github.com/Technologicat/pyan
+
+extra:
+  recipe-maintainers:
+    - thewchan
