@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyan3
-  version: "2.2.0"
+  version: "2.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyan3-${{ version }}.tar.gz
-  sha256: 28aee397c471623c2d17c6170e6b3328b87072c5646e0e4a8c3fe100b48fba2b
+  sha256: 69229f08035d2e5c7209ce4db4bc1cfaca1b68d5ad6fbdccd4e223c08c4b2f63
 
 build:
   number: 0
@@ -34,7 +34,9 @@ tests:
       imports:
         - pyan
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
