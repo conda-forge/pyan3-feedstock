@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyan3
-  version: "2.4.1"
+  version: "2.4.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyan3-${{ version }}.tar.gz
-  sha256: 32dfbdf4c6e2de6fdce0c96d7be8d139a6fe604e236ca5a2f6764fdaa9c5ef5b
+  sha256: 3ede0a79e7ba42271faf0de234f7d2733d325ec667c2907d1934dff0f6f33d97
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - hatchling
+    - pdm-backend
   run:
     - jinja2
     - python >=${{ python_min }}
