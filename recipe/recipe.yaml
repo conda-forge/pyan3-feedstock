@@ -24,7 +24,7 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - hatchling
+    - pdm-backend
   run:
     - jinja2
     - python >=${{ python_min }}
