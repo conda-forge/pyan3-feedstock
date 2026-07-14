@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyan3
-  version: "2.6.1"
+  version: "2.6.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyan3-${{ version }}.tar.gz
-  sha256: fa663d9e08e425bf8ec791ea50ae354d13634dd974ddde03c2fd1c5b7ded4d53
+  sha256: ecb63d32ea28ec10caf22aad11310022a341c9bf5e8b9301e9a64ed3fe2edc91
 
 build:
   number: 0
